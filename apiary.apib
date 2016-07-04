@@ -14,9 +14,11 @@ Register a new user in the application
         {
             "firstName": "Test",
             "lastName" : "User",
-            "username": "testUser",
             "password": "testPass",
-            "email": "abc@xyz.com"
+            "email": "abc@xyz.com",
+            "googleSignIn": <true | false>,
+            "fbSignIn": <true | false>,
+            "userId": "abcxyz0123"
         }
 
 + Response 200 (application/json)
@@ -37,7 +39,7 @@ Login a user in the application
 + Request (application/json)
 
         {
-            "username": "testUser",
+            "email": "abc@xyz.com",
             "password": "testPass",
         }
 
