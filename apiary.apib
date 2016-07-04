@@ -7,7 +7,7 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 # User Operations
 
 ## Register a user [/user/register] 
-### Register User [PUT]
+### Register User [POST]
 Register a new user in the application
 
 + Request (application/json)
@@ -20,16 +20,40 @@ Register a new user in the application
             "email": "abc@xyz.com"
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
     + Body
 
             {
+                "successToken": <1 | 2 | 3>
                 "userId": "abcxyz0123",
                 "firstName": "Test",
                 "lastName" : "User",
+                "message" : "<Message>"
             }
-        
+
+## Login a user [/user/login] 
+### Login a User [POST]
+Login a user in the application
+
++ Request (application/json)
+
+        {
+            "username": "testUser",
+            "password": "testPass",
+        }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "successToken": <1 | 2 | 3>
+                "userId": "abcxyz0123",
+                "firstName": "Test",
+                "lastName" : "User",
+                "message": <Message>
+            }
 
 ## Questions Collection [/questions]
 
